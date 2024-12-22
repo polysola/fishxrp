@@ -232,7 +232,7 @@ video {
   border: solid 0.5px SandyBrown;
 }
 
-/* Thêm media query cho màn hình < 900px */
+
 @media screen and (max-width: 900px) {
   #board {
     height: 60px;
@@ -286,6 +286,7 @@ video {
 
   #badgeImg {
     width: 30px;
+    object-fit: contain;
     height: auto;
   }
 

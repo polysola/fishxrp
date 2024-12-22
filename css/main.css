@@ -119,26 +119,19 @@ input.form-control::placeholder {
 }
 
 .btn-start {
-  width: 25%;
-  min-width: 120px;
+  width: 20%;
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 5px;
+  text-align: center;
 }
 .start-img {
   width: 100%;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
-  transition: all 0.3s ease;
 }
-.btn-start:hover .start-img {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
-}
-
-.btn-start:active .start-img {
-  transform: scale(0.95);
+.btn-start:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
 }
 
 @keyframes shake {
@@ -333,4 +326,30 @@ img.finalBadges {
   border-radius: 4px;
   margin-bottom: 10px;
   display: none;
+}
+
+.avatar-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+  .avatar-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .input-container {
+    gap: 10px;
+  }
 }

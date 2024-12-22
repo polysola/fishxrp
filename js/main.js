@@ -133,3 +133,25 @@ let exit = function () {
 };
 
 backgroundSound = setInterval(playUnderWaterSound, 6500);
+
+const tg = window.Telegram?.WebApp;
+let defaultAvatar = "images/default-avatar.png";
+
+window.onload = function () {
+  const nameInput = document.getElementById("nameEnter");
+  const avatarImg = document.getElementById("userAvatar");
+
+  if (tg) {
+    const user = tg.initDataUnsafe?.user;
+    if (user) {
+      nameInput.value = user.username || "";
+      nameInput.readOnly = true;
+
+      if (user.photo_url) {
+        avatarImg.src = user.photo_url;
+      }
+    }
+  } else {
+    avatarImg.src = defaultAvatar;
+  }
+};
